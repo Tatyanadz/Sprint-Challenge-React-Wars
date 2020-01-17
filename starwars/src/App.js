@@ -17,14 +17,15 @@ const App = () => {
         console.log('Error', err)
       })
   }, []);
-  
+  console.log("Char: ", character)
+
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
       {character.map((char, id) => {
         console.log(char.birth_year)
         return (
-          <InfoCard starwarsChars={starwarsChars} />
+          <InfoCard key={id} starwarsChars={char} />
         )
       })}
     </div>
